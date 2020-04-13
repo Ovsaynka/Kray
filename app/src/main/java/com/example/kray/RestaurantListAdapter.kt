@@ -22,6 +22,11 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
         return ViewHolder(view)
     }
 
+    fun addItems(items: List<Restaurant>) {
+        mRestaurantList.addAll(items)
+        notifyDataSetChanged()
+    }
+
     fun setItemClickListener(listener: Listener) {
         this.listener = listener
     }

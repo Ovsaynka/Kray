@@ -8,12 +8,18 @@ import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
+import com.example.kray.models.Restaurant
 import kotlinx.android.synthetic.main.main_page_fragment.*
+import org.koin.android.ext.android.get
 
-class MainPageFragment : MvpAppCompatFragment() {
+class MainPageFragment : MvpAppCompatFragment(),  RestaurantView{
 
     @InjectPresenter
     lateinit var mPresenter: RestaurantPresenter
+
+    @ProvidePresenter
+    fun provideRestaurantPresenter() = get<RestaurantPresenter>()
 
     private var mAdapter: RestaurantListAdapter = RestaurantListAdapter()
 
@@ -26,7 +32,7 @@ class MainPageFragment : MvpAppCompatFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val searchBar =
+        //val searchBar =
             view.findViewById(R.id.searchView) as SearchView
 
         restaurantRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -34,5 +40,8 @@ class MainPageFragment : MvpAppCompatFragment() {
 
     }
 
+    override fun setRestaurantList(restaurants: List<Restaurant>) {
+        mAdapter.addItems(restaurants)
+    }
 
 }

@@ -1,11 +1,12 @@
 package com.example.kray
 
+import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import com.example.kray.models.Restaurant
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
+@InjectViewState
 class RestaurantPresenter(private val getRestaurant: GetRestaurant) :
     MvpPresenter<RestaurantView>() {
 
@@ -19,7 +20,6 @@ class RestaurantPresenter(private val getRestaurant: GetRestaurant) :
                 //{ viewState.setRestaurantList(it.) },
                // { it.printStackTrace() }
             )
-
         compositeDisposable.add(disposable)
     }
 
