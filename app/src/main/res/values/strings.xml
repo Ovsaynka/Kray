@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Kray</string>
+    <string name="get_started">Get started</string>
+    <string name="welcome">Welcome</string>
+    <string name="choose">choose a restaurant for you</string>
+    <string name="user_name">User name</string>
+    <string name="log_out"><u>Log out</u></string>
+    <string name="search">Search</string>
+    <string name="cuisines">Cuisines</string>
+    <string name="sign_in">Sign in</string>
+    <string name="max_average_check">Max average check</string>
+</resources>
