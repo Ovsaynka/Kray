@@ -1,4 +1,4 @@
-package com.example.kray
+package com.example.kray.models
 
 import com.google.gson.annotations.SerializedName
 

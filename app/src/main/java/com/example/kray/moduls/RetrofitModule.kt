@@ -1,6 +1,7 @@
-package com.example.kray
+package com.example.kray.moduls
 
 import com.example.kray.Constants.BASE_URL
+import com.example.kray.GetRestaurant
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

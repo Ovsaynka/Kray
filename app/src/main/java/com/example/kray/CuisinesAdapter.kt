@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
+/*
 class CuisinesAdapter : RecyclerView.Adapter<CuisinesAdapter.ViewHolder>() {
 
     private val mCuisines: List<Cuisines> = listOf()
@@ -20,4 +21,4 @@ class CuisinesAdapter : RecyclerView.Adapter<CuisinesAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     }
-}
+}*/

@@ -1,5 +1,6 @@
-package com.example.kray
+package com.example.kray.models
 
+import com.example.kray.models.Cuisines
 import com.google.gson.annotations.SerializedName
 
 data class Restaurant(

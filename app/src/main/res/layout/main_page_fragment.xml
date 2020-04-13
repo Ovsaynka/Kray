@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorWight"
-    tools:context=".MainPageActivity">
+    tools:context=".MainPageFragment">
 
     <include
         android:id="@+id/include"
@@ -100,6 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/restaurantRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
