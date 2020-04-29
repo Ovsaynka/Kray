@@ -2,6 +2,8 @@ package com.example.kray.moduls
 
 import com.example.kray.Constants.BASE_URL
 import com.example.kray.GetRestaurant
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -13,11 +15,21 @@ val retrofitModule = module {
     single { provideGetRestaurant(get()) }
 }
 
+
 fun provideRetrofit(): Retrofit {
+    val logging = HttpLoggingInterceptor()
+    logging.setLevel(HttpLoggingInterceptor.Level.BASIC)
+
+    val client =
+        OkHttpClient.Builder()
+        .addInterceptor(logging)
+        .build()
+
     return Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
+        .client(client)
         .build()
 }
 

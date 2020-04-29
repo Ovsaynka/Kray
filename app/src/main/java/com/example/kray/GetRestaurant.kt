@@ -7,5 +7,5 @@ import retrofit2.http.GET
 interface GetRestaurant {
 
     @GET("/restaurant")
-    fun getRestaurants(): Single<List<Restaurant>>
+    fun getRestaurants(): Single<RestaurantsResponse>
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -35,12 +36,12 @@ class MainPageFragment : MvpAppCompatFragment(),  RestaurantView{
         //val searchBar =
             view.findViewById(R.id.searchView) as SearchView
 
-        restaurantRecyclerView.layoutManager = LinearLayoutManager(context)
+        mPresenter.fetchRestaurant()
+        restaurantRecyclerView.layoutManager = GridLayoutManager(context,2,GridLayoutManager.VERTICAL, false)
         restaurantRecyclerView.adapter = mAdapter
-
     }
 
-    override fun setRestaurantList(restaurants: List<Restaurant>) {
+    override fun setRestaurantList(restaurants: MutableList<Restaurant>) {
         mAdapter.addItems(restaurants)
     }
 

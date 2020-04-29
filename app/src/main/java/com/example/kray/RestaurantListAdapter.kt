@@ -15,7 +15,6 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
     interface Listener {
         fun onItemClick(restaurant: Restaurant)
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.rest_card, parent, false)
 
@@ -27,9 +26,9 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
         notifyDataSetChanged()
     }
 
-    fun setItemClickListener(listener: Listener) {
+   /* fun setItemClickListener(listener: Listener) {
         this.listener = listener
-    }
+    }*/
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(mRestaurantList[position], listener)
@@ -41,6 +40,9 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
         fun bind(restaurant: Restaurant, listener: Listener?) {
             itemView.nameRestTextView.text = restaurant.name
             itemView.addressTextView.text = restaurant.address
+            itemView.setOnClickListener {
+                listener?.onItemClick(restaurant)
+            }
         }
     }
 
