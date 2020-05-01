@@ -41,7 +41,7 @@ class MainPageFragment : MvpAppCompatFragment(),  RestaurantView{
         restaurantRecyclerView.adapter = mAdapter
     }
 
-    override fun setRestaurantList(restaurants: MutableList<Restaurant>) {
+    override fun setRestaurantList(restaurants: List<Restaurant>) {
         mAdapter.addItems(restaurants)
     }
 

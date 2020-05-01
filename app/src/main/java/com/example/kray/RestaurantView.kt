@@ -7,5 +7,5 @@ import com.example.kray.models.Restaurant
 
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface RestaurantView: MvpView {
-    fun setRestaurantList(restaurants: MutableList<Restaurant>)
+    fun setRestaurantList(restaurants: List<Restaurant>)
 }

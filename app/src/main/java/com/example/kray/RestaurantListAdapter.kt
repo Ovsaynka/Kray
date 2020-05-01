@@ -26,10 +26,6 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
         notifyDataSetChanged()
     }
 
-   /* fun setItemClickListener(listener: Listener) {
-        this.listener = listener
-    }*/
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(mRestaurantList[position], listener)
     }

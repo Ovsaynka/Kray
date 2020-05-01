@@ -7,5 +7,5 @@ data class Restaurant(
     @SerializedName("id") val id: Int,
     @SerializedName("name") val name: String,
     @SerializedName("address") val address: String,
-    @SerializedName("cuisines") val cuisines: List<Cuisines>
+    @SerializedName("cuisines") val cuisines: Cuisines
 ): Serializable
