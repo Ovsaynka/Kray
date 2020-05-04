@@ -11,5 +11,5 @@ import java.util.*
 
 interface GetRestaurant {
     @GET("/restaurant")
-    fun getRestaurants(): Single<RestaurantsResponse>
+    fun getRestaurants(): Single<List<Restaurant>>
 }

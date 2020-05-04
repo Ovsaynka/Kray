@@ -20,48 +20,19 @@ import java.io.IOException
 class RestaurantPresenter(private val getRestaurant: GetRestaurant) :
     MvpPresenter<RestaurantView>() {
 
-    private val mAdapter: RestaurantListAdapter = RestaurantListAdapter()
     private val compositeDisposable = CompositeDisposable()
-    private var dataList: MutableList<Restaurant> = mutableListOf()
-    private val response: Response<*>? = null
 
     fun fetchRestaurant() {
-       /* val call: Call<Restaurant> = provideGetRestaurant(provideRetrofit()).getRestaurants()
-        call.enqueue(object : Callback<Restaurant > {
-
-            override fun onResponse(call: Call<List<Restaurant>>?, response: Response<List<Restaurant>>?) {
-                val body = response?.body()?.toString()
-                println(body)
-
-                val json = GsonBuilder().create()
-
-                val homedateList: List<Restaurant> = json.fromJson(body, Array<Restaurant>::class.java).toList()
-//                getRestaurant.getRestaurants()
-//                dataList.addAll(response!!.body()!!)
-            }
-
-            override fun onFailure(call: Call<Restaurant>, e: IOException) {
-
-            }
-
-        })*/
-
-        val body = response?.body()?.toString()
-        val gson = GsonBuilder().create()
-
-        val homedata: List<Restaurant> = gson.fromJson(body, Array<Restaurant>::class.java).toList()
-        //val homedata= gson.fromJson(body, Restaurant::class.java)
 
         val disposable = getRestaurant.getRestaurants()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { mAdapter.addItems(homedata)},//viewState.setRestaurantList(homedata) },
+                { viewState.setRestaurantList(it) },
                 { it.printStackTrace() }
             )
         compositeDisposable.add(disposable)
     }
-    //mAdapter.addItems(it.results)},
 
     override fun onDestroy() {
         super.onDestroy()

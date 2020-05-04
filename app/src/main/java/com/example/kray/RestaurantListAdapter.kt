@@ -30,7 +30,7 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
         holder.bind(mRestaurantList[position], listener)
     }
 
-    override fun getItemCount(): Int = mRestaurantList.count()
+    override fun getItemCount(): Int = mRestaurantList.size
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(restaurant: Restaurant, listener: Listener?) {

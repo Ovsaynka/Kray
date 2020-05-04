@@ -14,7 +14,7 @@ import com.example.kray.models.Restaurant
 import kotlinx.android.synthetic.main.main_page_fragment.*
 import org.koin.android.ext.android.get
 
-class MainPageFragment : MvpAppCompatFragment(),  RestaurantView{
+class MainPageFragment : MvpAppCompatFragment(), RestaurantView {
 
     @InjectPresenter
     lateinit var mPresenter: RestaurantPresenter
@@ -22,7 +22,7 @@ class MainPageFragment : MvpAppCompatFragment(),  RestaurantView{
     @ProvidePresenter
     fun provideRestaurantPresenter() = get<RestaurantPresenter>()
 
-    private var mAdapter: RestaurantListAdapter = RestaurantListAdapter()
+    private val mAdapter: RestaurantListAdapter = RestaurantListAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,12 +33,11 @@ class MainPageFragment : MvpAppCompatFragment(),  RestaurantView{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //val searchBar =
-            view.findViewById(R.id.searchView) as SearchView
+        view.findViewById(R.id.searchView) as SearchView
 
-        mPresenter.fetchRestaurant()
-        restaurantRecyclerView.layoutManager = GridLayoutManager(context,2,GridLayoutManager.VERTICAL, false)
+        restaurantRecyclerView.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
         restaurantRecyclerView.adapter = mAdapter
+        mPresenter.fetchRestaurant()
     }
 
     override fun setRestaurantList(restaurants: List<Restaurant>) {

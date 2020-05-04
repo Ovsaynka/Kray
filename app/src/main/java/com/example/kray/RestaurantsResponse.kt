@@ -5,5 +5,5 @@ import retrofit2.Call
 import java.io.Serializable
 
 data class RestaurantsResponse (
-    val results: List<Restaurant>
+    val results: Array<Restaurant>
 )
