@@ -2,16 +2,16 @@ package com.example.kray
 
 import android.app.Application
 import com.example.kray.moduls.mainModule
-import com.example.kray.moduls.retrofitModule
+import com.example.kray.data.retrofitModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class Kray : Application() {
+class KrayApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
         startKoin {
-            androidContext(this@Kray)
+            androidContext(this@KrayApplication)
             modules(listOf(mainModule, retrofitModule))
         }
     }

@@ -1,24 +1,17 @@
-package com.example.kray.moduls
+package com.example.kray.data
 
-import com.example.kray.Constants.BASE_URL
-import com.example.kray.GetRestaurant
-import com.example.kray.RestaurantPresenter
-import com.google.gson.GsonBuilder
+import com.example.kray.data.Constants.BASE_URL
 import okhttp3.OkHttpClient
-import okhttp3.internal.cacheGet
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
-import org.koin.experimental.builder.getArguments
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-
 
 val retrofitModule = module {
     single { provideRetrofit() }
     single { provideGetRestaurant(get()) }
 }
-
 
 fun provideRetrofit(): Retrofit {
     val logging = HttpLoggingInterceptor()
@@ -36,5 +29,5 @@ fun provideRetrofit(): Retrofit {
         .build()
 }
 
-fun provideGetRestaurant(retrofit: Retrofit): GetRestaurant =
-    retrofit.create(GetRestaurant::class.java)
+fun provideGetRestaurant(retrofit: Retrofit): RestaurantApi =
+    retrofit.create(RestaurantApi::class.java)

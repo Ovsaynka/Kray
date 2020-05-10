@@ -1,4 +1,4 @@
-package com.example.kray
+package com.example.kray.welcome
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.arellomobile.mvp.MvpAppCompatFragment
+import com.example.kray.R
 import kotlinx.android.synthetic.main.start_page_activity.*
 
 class StartPageFragment: MvpAppCompatFragment() {
@@ -29,6 +30,4 @@ class StartPageFragment: MvpAppCompatFragment() {
           findNavController().navigate(R.id.action_startPageFragment_to_mainPageFragment)
         }
     }
-
-
 }

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/startPageFragment"
-        android:name="com.example.kray.StartPageFragment"
+        android:name="com.example.kray.welcome.StartPageFragment"
         android:label="StartPageFragment" >
         <action
             android:id="@+id/action_startPageFragment_to_mainPageFragment"
@@ -15,7 +15,15 @@
     </fragment>
     <fragment
         android:id="@+id/mainPageFragment"
-        android:name="com.example.kray.MainPageFragment"
+        android:name="com.example.kray.main.MainPageFragment"
         android:label="main_page_fragment"
-        tools:layout="@layout/main_page_fragment" />
+        tools:layout="@layout/main_page_fragment" >
+        <action
+            android:id="@+id/action_mainPageFragment_to_restaurantFragment"
+            app:destination="@id/restaurantFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantFragment"
+        android:name="com.example.kray.restaurant.RestaurantFragment"
+        android:label="RestaurantFragment" />
 </navigation>

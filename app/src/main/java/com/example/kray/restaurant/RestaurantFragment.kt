@@ -1,4 +1,4 @@
-package com.example.kray
+package com.example.kray.restaurant
 
 import androidx.fragment.app.Fragment
 

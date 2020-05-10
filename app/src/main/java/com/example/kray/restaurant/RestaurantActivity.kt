@@ -1,8 +1,10 @@
-package com.example.kray
+package com.example.kray.restaurant
 
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
 import com.arellomobile.mvp.MvpAppCompatActivity
+import com.example.kray.R
+import com.example.kray.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 

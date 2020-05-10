@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
+    android:layout_margin="8dp"
     android:orientation="vertical"
     android:background="@color/colorWight"
     app:layout_constraintStart_toStartOf="parent"
@@ -12,15 +12,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorWight">
 
         <ImageView
             android:id="@+id/restaurantImageView"
             android:layout_width="177dp"
-            android:layout_height="135dp"
+            android:layout_height="115dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/design_default_color_error"/>
+            android:background="@color/colorPrimary"/>
 
         <TextView
             android:id="@+id/nameRestTextView"
@@ -52,7 +53,7 @@
             android:layout_height="16dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/chek_star"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="7dp"
             android:text="4,8"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
