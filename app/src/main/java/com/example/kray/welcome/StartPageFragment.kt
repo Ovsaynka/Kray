@@ -9,7 +9,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.example.kray.R
-import kotlinx.android.synthetic.main.start_page_activity.*
+import kotlinx.android.synthetic.main.start_page_fragment.*
 
 class StartPageFragment: MvpAppCompatFragment() {
 
@@ -19,7 +19,7 @@ class StartPageFragment: MvpAppCompatFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.start_page_activity, container, false)
+        return inflater.inflate(R.layout.start_page_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

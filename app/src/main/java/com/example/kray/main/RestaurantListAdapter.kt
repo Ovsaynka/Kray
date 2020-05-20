@@ -27,6 +27,10 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
         fun onItemClick(restaurant: Restaurant)
     }
 
+    fun setItemClickListener(listener: Listener) {
+        this.listener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.rest_card, parent, false)
 

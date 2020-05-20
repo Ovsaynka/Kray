@@ -6,6 +6,6 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import com.example.kray.data.Restaurant
 
 @StateStrategyType(AddToEndSingleStrategy::class)
-interface RestaurantView: MvpView {
+interface MainPageView: MvpView {
     fun setRestaurantList(restaurants: List<Restaurant>)
 }

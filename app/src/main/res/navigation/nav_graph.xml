@@ -8,7 +8,8 @@
     <fragment
         android:id="@+id/startPageFragment"
         android:name="com.example.kray.welcome.StartPageFragment"
-        android:label="StartPageFragment" >
+        android:label="StartPageFragment"
+        tools:layout="@layout/start_page_fragment">
         <action
             android:id="@+id/action_startPageFragment_to_mainPageFragment"
             app:destination="@id/mainPageFragment" />
@@ -17,13 +18,23 @@
         android:id="@+id/mainPageFragment"
         android:name="com.example.kray.main.MainPageFragment"
         android:label="main_page_fragment"
-        tools:layout="@layout/main_page_fragment" >
+        tools:layout="@layout/main_page_fragment">
         <action
-            android:id="@+id/action_mainPageFragment_to_restaurantFragment"
-            app:destination="@id/restaurantFragment" />
+            android:id="@+id/action_mainPageFragment_to_restaurantActivity"
+            app:destination="@id/restaurantActivity" />
+        <action
+            android:id="@+id/action_mainPageFragment_self"
+            app:popUpTo="@id/restaurantActivity"
+            app:popEnterAnim="@anim/fade_in_left"
+            app:popExitAnim="@anim/fade_out_left" />
     </fragment>
-    <fragment
-        android:id="@+id/restaurantFragment"
-        android:name="com.example.kray.restaurant.RestaurantFragment"
-        android:label="RestaurantFragment" />
+    <activity
+        android:id="@+id/restaurantActivity"
+        android:name="com.example.kray.restaurant.RestaurantActivity"
+        android:label="btn_navigation"
+        tools:layout="@layout/btn_navigation">
+        <argument
+            android:name="restaurant"
+            app:argType="com.example.kray.data.Restaurant" />
+    </activity>
 </navigation>

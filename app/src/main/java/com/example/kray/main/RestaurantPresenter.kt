@@ -9,7 +9,7 @@ import io.reactivex.schedulers.Schedulers
 
 @InjectViewState
 class RestaurantPresenter(private val restaurantApi: RestaurantApi) :
-    MvpPresenter<RestaurantView>() {
+    MvpPresenter<MainPageView>() {
 
     private val compositeDisposable = CompositeDisposable()
 

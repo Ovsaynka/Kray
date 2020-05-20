@@ -9,4 +9,7 @@
     <string name="cuisines">Cuisines</string>
     <string name="sign_in">Sign in</string>
     <string name="max_average_check">Max average check</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>

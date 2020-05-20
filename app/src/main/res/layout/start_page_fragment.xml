@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/startPageFragment"
     android:orientation="vertical"
     tools:context=".welcome.StartPageFragment">
 
@@ -35,6 +36,9 @@
             android:layout_marginBottom="28dp"
             android:background="@drawable/button_back"
             android:elevation="0dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="@font/muli"
             android:text="@string/get_started"
             app:layout_constraintBottom_toTopOf="@+id/sign_inButton"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +53,9 @@
             android:background="@drawable/button_back"
             android:elevation="0dp"
             android:text="@string/sign_in"
+            android:textAllCaps="false"
+            android:fontFamily="@font/muli"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"

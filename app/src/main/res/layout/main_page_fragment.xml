@@ -23,6 +23,7 @@
         android:background="@drawable/searchview_rounded"
         android:drawableEnd="@drawable/ic_search_black_24dp"
         android:hint="@string/search"
+        android:textColorHint="@color/transparentBlack"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:textColor="@color/black"
@@ -68,10 +69,10 @@
         android:id="@+id/appCompatSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:max="100"
         android:progress="50"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -80,6 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
