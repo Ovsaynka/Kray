@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_startPageFragment_to_mainPageFragment"
             app:destination="@id/mainPageFragment" />
+        <action
+            android:id="@+id/action_startPageFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainPageFragment"
@@ -37,4 +40,30 @@
             android:name="restaurant"
             app:argType="com.example.kray.data.Restaurant" />
     </activity>
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.kray.restaurant.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/reg_in_fragment">
+        <action
+            android:id="@+id/action_registrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.kray.restaurant.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_startPageFragment2"
+            app:destination="@id/startPageFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
+    </fragment>
+
 </navigation>

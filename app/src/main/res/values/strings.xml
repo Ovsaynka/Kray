@@ -12,4 +12,7 @@
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="passwordRepeat">Please, repeat password</string>
+    <string name="createAccount">Create account?</string>
+    <string name="signUp">Sign up</string>
 </resources>

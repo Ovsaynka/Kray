@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -28,6 +29,10 @@ class StartPageFragment: MvpAppCompatFragment() {
 
         get_startedButton.setOnClickListener {
           findNavController().navigate(R.id.action_startPageFragment_to_mainPageFragment)
+        }
+
+        sign_inButton.setOnClickListener {
+            findNavController().navigate(R.id.action_startPageFragment_to_loginFragment)
         }
     }
 }

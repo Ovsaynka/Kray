@@ -16,6 +16,8 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         android:theme="@style/AppTheme">
         <activity android:name=".restaurant.RestaurantActivity"/>
+        <activity android:name=".restaurant.RegistrationFragment"/>
+        <activity android:name=".restaurant.LoginFragment"/>
         <activity android:name="com.example.kray.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

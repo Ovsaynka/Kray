@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWight"
+    tools:context=".restaurant.RegistrationFragment">
+
+    <EditText
+        android:id="@+id/passwordRepeatEditText2"
+        style="@style/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/sign_in_rounded_corners"
+        android:drawableStart="@drawable/password_image"
+        android:hint="@string/password"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:textColorHint="@color/transparentBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="211dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/sign"
+        android:elevation="0dp"
+        android:fontFamily="@font/muli"
+        android:text="@string/signUp"
+        android:textAllCaps="false"
+        android:textColor="@color/transparentBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRepeatEditText2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="148dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/log_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backButton"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/back_btn_sign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signUpButton" />
+
+    <EditText
+        android:id="@+id/logInEditText"
+        style="@style/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/sign_in_rounded_corners"
+        android:drawableStart="@drawable/login_image"
+        android:hint="@string/login"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:textColorHint="@color/transparentBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/mailEditText"
+        style="@style/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/sign_in_rounded_corners"
+        android:drawableStart="@drawable/mail_image"
+        android:hint="@string/email"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:textColorHint="@color/transparentBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logInEditText" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        style="@style/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/sign_in_rounded_corners"
+        android:drawableStart="@drawable/password_image"
+        android:hint="@string/password"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:textColorHint="@color/transparentBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mailEditText" />
+</androidx.constraintlayout.widget.ConstraintLayout>

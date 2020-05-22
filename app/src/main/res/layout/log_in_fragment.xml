@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".restaurant.LoginFragment">
+
+    <Button
+        android:id="@+id/createAccountButton"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="212dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/sign"
+        android:elevation="0dp"
+        android:fontFamily="@font/muli"
+        android:text="@string/createAccount"
+        android:textAllCaps="false"
+        android:textColor="@color/transparentBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signIn" />
+
+    <Button
+        android:id="@+id/signIn"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/sign"
+        android:elevation="0dp"
+        android:fontFamily="@font/muli"
+        android:text="@string/sign_in"
+        android:textAllCaps="false"
+        android:textColor="@color/transparentBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginEnter" />
+
+    <EditText
+        android:id="@+id/mailEnter"
+        style="@style/textView"
+        android:layout_width="349dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/sign_in_rounded_corners"
+        android:drawableStart="@drawable/mail_image"
+        android:hint="@string/email"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:textColorHint="@color/transparentBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <EditText
+        android:id="@+id/loginEnter"
+        style="@style/textView"
+        android:layout_width="350dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/sign_in_rounded_corners"
+        android:drawableStart="@drawable/password_image"
+        android:hint="@string/password"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp"
+        android:textColorHint="@color/transparentBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mailEnter" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="420dp"
+        android:layout_height="229dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chef" />
+
+    <Button
+        android:id="@+id/backButton2"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="63dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/back_btn_sign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createAccountButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>
