@@ -43,7 +43,7 @@
 
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.kray.restaurant.RegistrationFragment"
+        android:name="com.example.kray.registration.RegistrationFragment"
         android:label="RegistrationFragment"
         tools:layout="@layout/reg_in_fragment">
         <action
@@ -53,7 +53,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.kray.restaurant.LoginFragment"
+        android:name="com.example.kray.login.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"

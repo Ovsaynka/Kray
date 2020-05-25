@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".restaurant.LoginFragment">
+    tools:context=".login.LoginFragment">
 
     <Button
         android:id="@+id/createAccountButton"
@@ -47,8 +47,8 @@
         android:layout_height="59dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/sign_in_rounded_corners"
-        android:drawableStart="@drawable/mail_image"
-        android:hint="@string/email"
+        android:drawableStart="@drawable/login_image"
+        android:hint="@string/login"
         android:paddingStart="8dp"
         android:paddingEnd="16dp"
         android:textColorHint="@color/transparentBlack"
@@ -67,6 +67,7 @@
         android:hint="@string/password"
         android:paddingStart="8dp"
         android:paddingEnd="16dp"
+        android:password="true"
         android:textColorHint="@color/transparentBlack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

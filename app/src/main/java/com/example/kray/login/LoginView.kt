@@ -1,4 +1,4 @@
-package com.example.kray.restaurant
+package com.example.kray.login
 
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType

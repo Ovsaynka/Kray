@@ -31,3 +31,4 @@ fun provideRetrofit(): Retrofit {
 
 fun provideGetRestaurant(retrofit: Retrofit): RestaurantApi =
     retrofit.create(RestaurantApi::class.java)
+

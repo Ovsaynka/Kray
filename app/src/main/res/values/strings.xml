@@ -15,4 +15,6 @@
     <string name="passwordRepeat">Please, repeat password</string>
     <string name="createAccount">Create account?</string>
     <string name="signUp">Sign up</string>
+    <string name="PleaseEnterLogin">Please, enter login</string>
+    <string name="PleaseEnterPassword">Please, enter password</string>
 </resources>
