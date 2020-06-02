@@ -8,6 +8,9 @@ data class Restaurant(
     @SerializedName("name") val name: String?,
     @SerializedName("address") val address: String?,
     @SerializedName("description") val description: String?,
+    @SerializedName("phone") val phone:String?,
     @SerializedName("cuisines") val cuisines: Array<String?>?,
-    @SerializedName("url") val image: String?
+    @SerializedName("url") val image: String?,
+    @SerializedName("longitude") val longtitude: Double?,
+    @SerializedName("latitude") val latitude: Double?
 ): Serializable

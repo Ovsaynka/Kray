@@ -4,6 +4,8 @@
     package="com.example.kray">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:name="com.example.kray.KrayApplication"
@@ -15,6 +17,10 @@
         android:supportsRtl="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         android:theme="@style/AppTheme">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key"/>
+
         <activity android:name=".restaurant.RestaurantActivity"/>
         <activity android:name=".registration.RegistrationFragment"/>
         <activity android:name=".login.LoginFragment"/>

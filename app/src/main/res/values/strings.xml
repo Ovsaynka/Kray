@@ -17,4 +17,6 @@
     <string name="signUp">Sign up</string>
     <string name="PleaseEnterLogin">Please, enter login</string>
     <string name="PleaseEnterPassword">Please, enter password</string>
+    <string name="Address">Address</string>
+    <string name="Telephone">Telephone</string>
 </resources>
