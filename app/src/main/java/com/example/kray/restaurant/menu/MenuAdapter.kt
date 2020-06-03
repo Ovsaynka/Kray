@@ -6,17 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kray.R
 import com.example.kray.data.Menu
+import kotlinx.android.synthetic.main.menu_card.view.*
 
-class MenuAdapter(private val mDescriptionList: Array<Menu?>):
-    RecyclerView.Adapter<MenuAdapter.TypeMenuViewHolder>() {
+class MenuAdapter(private val mDescriptionList: ArrayList<Menu?>):
+    RecyclerView.Adapter<MenuViewHolder>() {
 
-    private var listener: Listener? = null
+    var listener: Listener? = null
 
-    private val drawables = arrayOf(
-        R.drawable.main_dish_icon,+
+    private val drawables = arrayListOf(
+        R.drawable.main_dish_icon, +
         R.drawable.pizza_icon,
         R.drawable.dessert_icon,
         R.drawable.drinks_icon,
@@ -24,21 +26,17 @@ class MenuAdapter(private val mDescriptionList: Array<Menu?>):
         R.drawable.sushi_icon
     )
 
-    interface Listener{
+    interface Listener {
         fun onItemClick(menu: Menu)
     }
 
-    fun setItemClickListener(listener: Listener) {
-        this.listener = listener
+    override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
+        mDescriptionList.sortWith(compareBy { it?.id })
+        holder.bind(mDescriptionList[position]!!, drawables[position], listener)
     }
 
-    override fun onBindViewHolder(holder: TypeMenuViewHolder, position: Int) {
-        mDescriptionList.sortWith(compareBy {it?.id})
-    holder.bind(mDescriptionList[position]!!, drawables[position], listener)
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TypeMenuViewHolder {
-        return TypeMenuViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
+        return MenuViewHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.menu_card,
                 parent,
@@ -51,16 +49,4 @@ class MenuAdapter(private val mDescriptionList: Array<Menu?>):
         return mDescriptionList.size
     }
 
-    class TypeMenuViewHolder internal constructor(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
-        private val typeDrawable: ImageView = itemView.findViewById(R.id.typeImageView)
-        private val typeText: TextView = itemView.findViewById(R.id.typeTextView)
-
-        @SuppressLint("ClickableViewAccessibility")
-         fun bind(menu: Menu, drawableId: Int, listener: Listener?) {
-            typeDrawable.setImageDrawable(typeDrawable.context.getDrawable(drawableId))
-            typeText.text = menu.description
-             itemView.setOnClickListener { listener?.onItemClick(menu) }
-        }
-    }
 }

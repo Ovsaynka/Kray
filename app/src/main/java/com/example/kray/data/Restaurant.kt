@@ -32,10 +32,7 @@ data class Restaurant(
     val avgCheck: Int?,
 
     @SerializedName("menu")
-    val menu: Array<Menu?>,
-
-    @SerializedName("dishes")
-    val dishes: Dishes?,
+    val menu: ArrayList<Menu?>,
 
     @SerializedName("commentRestaurants")
     val comments: Array<Comment?>
@@ -54,7 +51,6 @@ data class Restaurant(
         if (description != other.description) return false
         if (image != other.image) return false
         if (avgCheck != other.avgCheck) return false
-        if (!menu.contentEquals(other.menu)) return false
 
         return true
     }
@@ -66,7 +62,6 @@ data class Restaurant(
         result = 31 * result + (description?.hashCode() ?: 0)
         result = 31 * result + (image?.hashCode() ?: 0)
         result = 31 * result + (avgCheck ?: 0)
-        result = 31 * result + menu.contentHashCode()
         return result
     }
 }

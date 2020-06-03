@@ -8,5 +8,8 @@ data class Menu(
     @SerializedName("id") val id: Int?,
 
     @SerializedName("description")
-    val description: String?
+    val description: String?,
+
+    @SerializedName("dishes")
+    val dishes: ArrayList<Dishes?>
 ): Serializable

@@ -7,62 +7,65 @@
     android:background="#FFFFFF">
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="63dp"
-        android:layout_height="24dp"
+        android:id="@+id/addressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/searchview_rounded"
-        android:fontFamily="@font/muli"
+        style="@style/textView"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/Address"
         android:textColor="#131313"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/Address" />
 
     <TextView
         android:id="@+id/textAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        style="@style/textView"
+        android:textSize="18sp"
+        tools:text="Address"
+        android:textColor="#131313"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
+
+    <TextView
+        android:id="@+id/phoneTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/muli"
-        android:text="TextView"
-        android:textColor="#131313"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="75dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:textSize="18sp"
         android:background="@drawable/searchview_rounded"
         android:fontFamily="@font/muli"
         android:gravity="clip_horizontal|center_horizontal"
         android:text="@string/Telephone"
         android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/Telephone" />
 
     <TextView
         android:id="@+id/textTelephone"
-        android:layout_width="wrap_content"
+        style="@style/textView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/muli"
-        android:text="TextView"
+        android:layout_marginEnd="8dp"
         android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneTextView"
+        tools:text="Phone number" />
 
 
     <com.google.android.gms.maps.MapView
