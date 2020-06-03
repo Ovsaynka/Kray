@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:background="@android:color/transparent"
+    android:background="@color/colorWight"
     android:orientation="vertical"
     app:cardElevation="0dp"
     app:layout_constraintStart_toStartOf="parent"
@@ -65,8 +65,9 @@
 
         <TextView
             style="@style/textView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="7dp"
             android:textSize="12sp"

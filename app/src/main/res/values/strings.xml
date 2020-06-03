@@ -19,7 +19,7 @@
     <string name="PleaseEnterPassword">Please, enter password</string>
     <string name="enter_your_feedback">Enter your feedback</string>
     <string name="your_feedback">Your feedback</string>
-    <string name="Address">Address</string>
-    <string name="Telephone">Telephone</string>
+    <string name="Address">Address </string>
+    <string name="Telephone">Telephone </string>
     <string name="logout">Logout</string>
 </resources>
