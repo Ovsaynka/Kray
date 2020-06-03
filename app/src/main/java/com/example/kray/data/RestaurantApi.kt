@@ -7,6 +7,8 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.POST
 
+const val PARAM_ID_MENU = "id"
+
 interface RestaurantApi {
     @GET("/restaurant")
     fun getRestaurants(): Single<List<Restaurant>>
@@ -20,4 +22,7 @@ interface RestaurantApi {
     fun registerUser(
         @Body info: SignUpBody
     ): retrofit2.Call<ResponseBody>
+
+    @POST("/commentRestaurant")
+    fun getCommentRestaurant()
 }

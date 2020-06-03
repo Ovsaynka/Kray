@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kray.R
+import com.example.kray.data.Comment
 import com.example.kray.data.Restaurant
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.restaurant_fragment.*
@@ -27,11 +29,16 @@ class RestaurantFragment : Fragment(), RestaurantView {
         }
     }
 
+    //private val mAdapter: RestaurantAdapter = RestaurantAdapter()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val restaurant = requireArguments().getSerializable(RESTAURANT_KEY) as Restaurant
 
         loadData(restaurant)
+
+        feedbackRecyclerView.layoutManager = LinearLayoutManager(context)
+        feedbackRecyclerView.adapter = RestaurantAdapter(restaurant.comments)
     }
 
     override fun onCreateView(
@@ -49,4 +56,8 @@ class RestaurantFragment : Fragment(), RestaurantView {
         descriptionTextView.text = restaurant.description.toString()
         restAddressTextView.text = restaurant.address.toString()
     }
+
+    /*override fun setCommentList(comment: List<Comment>) {
+       // mAdapter.addItems(comment)
+    }*/
 }

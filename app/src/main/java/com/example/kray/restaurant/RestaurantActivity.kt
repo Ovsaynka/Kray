@@ -42,7 +42,7 @@ class RestaurantActivity : MvpAppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_menu -> {
-                    val fragment = MenuFragment.newInstance()
+                    val fragment = MenuFragment.newInstance(restaurant)
                     addFragment(fragment)
                     return@OnNavigationItemSelectedListener true
                 }
@@ -62,4 +62,6 @@ class RestaurantActivity : MvpAppCompatActivity() {
             .replace(R.id.container, fragment, fragment.javaClass.simpleName)
             .commit()
     }
+
+
 }

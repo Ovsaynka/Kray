@@ -6,6 +6,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
@@ -62,9 +63,20 @@ class MainPageFragment : MvpAppCompatFragment(),
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
         })
-        mAdapter.setItemClickListener(this)
 
+        avgCheckSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+                override fun onProgressChanged(seekBar: SeekBar, progress: Int, b: Boolean) {
+                }
+                override fun onStartTrackingTouch(seekBar: SeekBar) {}
+                override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                    mAdapter.getFilterAvg(seekBar!!.progress)
+                    Toast.makeText(view.context,"Avg check "+ seekBar.progress,Toast.LENGTH_SHORT).show()
+                }
+            })
+        mAdapter.setItemClickListener(this)
     }
+
+
 
     private fun search(s: String?) {
         mAdapter.search(s) {
