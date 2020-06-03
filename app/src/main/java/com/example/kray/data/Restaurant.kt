@@ -20,8 +20,8 @@ data class Restaurant(
     @SerializedName("phone")
     val phone:String?,
 
-    @SerializedName("cuisines")
-    val cuisines: Array<String?>?,
+    //@SerializedName("cuisines")
+    //val cuisines: Array<String?>?,
 
     @SerializedName("longitude")
     val longtitude: Double?,

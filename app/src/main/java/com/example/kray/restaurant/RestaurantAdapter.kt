@@ -32,6 +32,7 @@ class RestaurantAdapter(private val mCommentsList: Array<Comment?>) : RecyclerVi
 
             itemView.feedbackRatingBar.rating = comment.stars!!.toFloat()
             itemView.feedbackTextView.text = comment.comment.toString()
+            itemView.userNameTextView.text = comment.name.toString()
         }
     }
 }
