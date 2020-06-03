@@ -4,15 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 
-class SessionManager {
+class SessionManager(var con: Context) {
 
     var pref: SharedPreferences
     var editor: SharedPreferences.Editor
-    var con: Context
     var PRIVATE_MODE: Int = 0
 
-    constructor(con: Context){
-        this.con = con
+    init {
         pref = con.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
         editor = pref.edit()
     }

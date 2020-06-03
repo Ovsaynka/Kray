@@ -2,10 +2,7 @@ package com.example.kray.data
 
 import io.reactivex.Single
 import okhttp3.ResponseBody
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 const val PARAM_ID_MENU = "id"
 
@@ -25,4 +22,14 @@ interface RestaurantApi {
 
     @POST("/commentRestaurant")
     fun getCommentRestaurant()
+
+
+    @Headers("Content-Type:application/json")
+    @POST("/commentRestaurant/addCommentRestaurant")
+    fun sendComment(
+        @Body comment: CommentToSend,
+        @Query("idRestaurant") idRestaurant: Int,
+        @Query("idUser") idUser: Int,
+        @Header("Authorization") token: String
+    ): retrofit2.Call<ResponseBody>
 }
