@@ -94,8 +94,9 @@ class LoginFragment : MvpAppCompatFragment(),
 
                     val userName: String = response.body()?.login!!
                     val token: String = response.body()?.token!!
+                    val id: String = response.body()?.id!!
 
-                    session.createLoginSession(userName, token)
+                    session.createLoginSession(userName, token, id)
 
                   findNavController().navigate(R.id.action_loginFragment_to_mainPageFragment)
                 } else {
