@@ -1,6 +1,5 @@
 package com.example.kray.data
 
-import android.annotation.SuppressLint
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
@@ -19,9 +18,6 @@ data class Restaurant(
 
     @SerializedName("phone")
     val phone:String?,
-
-    //@SerializedName("cuisines")
-    //val cuisines: Array<String?>?,
 
     @SerializedName("longitude")
     val longtitude: Double?,
@@ -44,7 +40,8 @@ data class Restaurant(
     @SerializedName("commentRestaurants")
     val comments: Array<Comment?>
 
-) : Serializable {
+) : Serializable
+{
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
