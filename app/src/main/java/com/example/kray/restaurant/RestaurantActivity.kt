@@ -47,7 +47,7 @@ class RestaurantActivity : MvpAppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_address -> {
-                    val fragment = AddressFragment.newInstance()
+                    val fragment = AddressFragment.newInstance(restaurant)
                     addFragment(fragment)
                     return@OnNavigationItemSelectedListener true
                 }

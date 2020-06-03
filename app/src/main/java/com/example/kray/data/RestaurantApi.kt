@@ -15,7 +15,7 @@ interface RestaurantApi {
 
     @POST("/auth/login")
     @Headers("Content-Type:application/json")
-    fun signIn(@Body info: SignInBody): retrofit2.Call<ResponseBody>
+    fun signIn(@Body info: SignInBody): retrofit2.Call<UserBody>
 
     @Headers("Content-Type:application/json")
     @POST("/users/register")

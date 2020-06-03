@@ -8,13 +8,17 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kray.R
 import com.example.kray.data.Comment
+import com.example.kray.SessionManager
 import com.example.kray.data.Restaurant
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.restaurant_fragment.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 const val RESTAURANT_KEY = "restaurant"
 
 class RestaurantFragment : Fragment(), RestaurantView {
+
+    lateinit var session: SessionManager
 
     companion object {
 

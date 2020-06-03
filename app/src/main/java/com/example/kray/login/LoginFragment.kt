@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.beust.klaxon.Klaxon
 import com.example.kray.R
+import com.example.kray.SessionManager
 import com.example.kray.data.RestaurantApi
 import com.example.kray.data.SignInBody
 import com.example.kray.data.UserBody
@@ -28,16 +29,20 @@ import java.lang.Thread.sleep
 
 class LoginFragment : MvpAppCompatFragment(),
     LoginView {
+    lateinit var session: SessionManager
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        session = SessionManager(requireContext())
         return inflater.inflate(R.layout.log_in_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         signIn.setOnClickListener {
             val login = mailEnter.text.toString()
@@ -76,23 +81,28 @@ class LoginFragment : MvpAppCompatFragment(),
     private fun signin(email: String, password: String) {
         val retIn = provideRetrofit().create(RestaurantApi::class.java)
         val signInInfo = SignInBody(email, password)
-        retIn.signIn(signInInfo).enqueue(object : Callback<ResponseBody> {
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+        retIn.signIn(signInInfo).enqueue(object : Callback<UserBody> {
+            override fun onFailure(call: Call<UserBody>, t: Throwable) {
                 Toast.makeText(
                     context,
                     t.message,
                     Toast.LENGTH_SHORT
                 ).show()
             }
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+            override fun onResponse(call: Call<UserBody>, response: Response<UserBody>) {
                 if (response.code() == 200) {
+
+                    val userName: String = response.body()?.login!!
+                    val token: String = response.body()?.token!!
+
+                    session.createLoginSession(userName, token)
+
                   findNavController().navigate(R.id.action_loginFragment_to_mainPageFragment)
                 } else {
                     Toast.makeText(context, "Login failed!", Toast.LENGTH_SHORT).show()
                 }
             }
         })
-
       //  return UserBody
     }
 }

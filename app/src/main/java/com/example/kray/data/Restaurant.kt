@@ -17,7 +17,18 @@ data class Restaurant(
     @SerializedName("description")
     val description: String?,
 
-    // @SerializedName("cuisines") val cuisines: Array<String?>?,
+    @SerializedName("phone")
+    val phone:String?,
+
+    @SerializedName("cuisines")
+    val cuisines: Array<String?>?,
+
+    @SerializedName("longitude")
+    val longtitude: Double?,
+
+    @SerializedName("latitude")
+    val latitude: Double?,
+
     @SerializedName("url")
     val image: String?,
 
@@ -47,7 +58,6 @@ data class Restaurant(
         if (image != other.image) return false
         if (avgCheck != other.avgCheck) return false
         if (!menu.contentEquals(other.menu)) return false
-       // if (!dishes.contentEquals(other.dishes)) return false
 
         return true
     }
@@ -60,7 +70,6 @@ data class Restaurant(
         result = 31 * result + (image?.hashCode() ?: 0)
         result = 31 * result + (avgCheck ?: 0)
         result = 31 * result + menu.contentHashCode()
-       // result = 31 * result + dishes.contentHashCode()
         return result
     }
 }
