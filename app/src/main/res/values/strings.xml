@@ -19,4 +19,5 @@
     <string name="PleaseEnterPassword">Please, enter password</string>
     <string name="Address">Address</string>
     <string name="Telephone">Telephone</string>
+    <string name="logout">Logout</string>
 </resources>

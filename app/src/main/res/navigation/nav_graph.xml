@@ -30,6 +30,9 @@
             app:popUpTo="@id/restaurantActivity"
             app:popEnterAnim="@anim/fade_in_left"
             app:popExitAnim="@anim/fade_out_left" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_startPageFragment"
+            app:destination="@id/startPageFragment" />
     </fragment>
     <activity
         android:id="@+id/restaurantActivity"

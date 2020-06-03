@@ -16,14 +16,18 @@ import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.kray.R
+import com.example.kray.SessionManager
 import com.example.kray.data.Restaurant
 import kotlinx.android.synthetic.main.main_page_fragment.*
+import kotlinx.android.synthetic.main.toolbar.*
 import org.koin.android.ext.android.get
 
 const val RESTAURANT_KEY = "restaurant"
 
 class MainPageFragment : MvpAppCompatFragment(),
     MainPageView, RestaurantListAdapter.Listener {
+
+    lateinit var session: SessionManager
 
     @InjectPresenter
     lateinit var mPresenter: RestaurantPresenter
@@ -40,6 +44,7 @@ class MainPageFragment : MvpAppCompatFragment(),
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        session = SessionManager(requireContext())
         return inflater.inflate(R.layout.main_page_fragment, container, false)
     }
 
@@ -64,6 +69,29 @@ class MainPageFragment : MvpAppCompatFragment(),
         })
         mAdapter.setItemClickListener(this)
 
+        session.checkLogin()
+
+
+
+        if(session.isLoggedIn()) {
+            val user: Map<String, String>
+
+            user = session.getUserDetails()
+
+            val userName: String = user.get(SessionManager.KEY_USERNAME)!!
+
+            userNameTextView.text = userName
+        } else
+        {
+            userNameTextView.text = ""
+        }
+
+        logout.setOnClickListener {
+            if(session.isLoggedIn()) {
+                session.LogoutUser()
+                findNavController().navigate(R.id.action_mainPageFragment_to_startPageFragment)
+            }
+        }
     }
 
     private fun search(s: String?) {

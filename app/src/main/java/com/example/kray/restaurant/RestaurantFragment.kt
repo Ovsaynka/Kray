@@ -6,13 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.kray.R
+import com.example.kray.SessionManager
 import com.example.kray.data.Restaurant
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.restaurant_fragment.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 const val RESTAURANT_KEY = "restaurant"
 
 class RestaurantFragment : Fragment(), RestaurantView {
+
+    lateinit var session: SessionManager
 
     companion object {
 
@@ -32,6 +36,7 @@ class RestaurantFragment : Fragment(), RestaurantView {
         val restaurant = requireArguments().getSerializable(RESTAURANT_KEY) as Restaurant
 
         loadData(restaurant)
+
     }
 
     override fun onCreateView(
