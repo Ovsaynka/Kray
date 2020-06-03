@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_mainPageFragment_to_startPageFragment"
             app:destination="@id/startPageFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <activity
         android:id="@+id/restaurantActivity"

@@ -37,6 +37,7 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
         return ViewHolder(view)
     }
 
+
     fun addItems(items: List<Restaurant>) {
         mFilterRestaurantList.addAll(items)
         notifyDataSetChanged()
@@ -92,6 +93,7 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
 
             itemView.nameRestTextView.text = restaurant.name
             itemView.addressTextView.text = restaurant.address
+            itemView.rate.text = restaurant.stars.toString()
             itemView.setOnClickListener {
                 listener?.onItemClick(restaurant)
             }

@@ -79,6 +79,10 @@ class RestaurantFragment : Fragment(), RestaurantView {
 
     }
 
+    fun addComment(comment: Comment) {
+
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -121,11 +125,14 @@ class RestaurantFragment : Fragment(), RestaurantView {
                     if (response.code() == 200) {
                         Toast.makeText(context, "Thank you for comment!", Toast.LENGTH_SHORT)
                             .show()
+                        commentField.hint = "Enter your comment"
+                        commentField.setText("")
+                        ratingStars.rating = 0F
                     } else {
                         Toast.makeText(context, response.code().toString(), Toast.LENGTH_SHORT)
                             .show()
                     }
                 }
-                })
+            })
         }
     }

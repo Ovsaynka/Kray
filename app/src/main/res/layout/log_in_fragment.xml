@@ -50,6 +50,7 @@
         android:drawableStart="@drawable/login_image"
         android:hint="@string/login"
         android:paddingStart="8dp"
+        android:paddingLeft="8dp"
         android:paddingEnd="16dp"
         android:textColorHint="@color/transparentBlack"
         app:layout_constraintEnd_toEndOf="parent"

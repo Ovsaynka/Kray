@@ -25,6 +25,17 @@ class RestaurantPresenter(private val restaurantApi: RestaurantApi) :
         compositeDisposable.add(disposable)
     }
 
+//    fun fetchComments() {
+//        val disposable = restaurantApi.getRestaurants()
+//            .subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe(
+//                { viewState.addComment(it.results.last()) },
+//                { it.printStackTrace() }
+//            )
+//        compositeDisposable.add(disposable)
+//    }
+
     override fun onDestroy() {
         super.onDestroy()
         compositeDisposable.dispose()
