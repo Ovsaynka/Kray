@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWight">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
@@ -51,8 +55,8 @@
     <TextView
         android:id="@+id/textView2"
         style="@style/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="187dp"
+        android:layout_height="34dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/your_feedback"
@@ -73,25 +77,27 @@
         app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
         tools:text="Address" />
 
-    <EditText
-        android:id="@+id/editText"
-        style="@style/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/feedback_edit_text"
-        android:gravity="center"
-        android:hint="@string/enter_your_feedback"
-        android:textColorHint="@color/transparentBlack"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <EditText
+            android:id="@+id/commentField"
+            style="@style/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/feedback_edit_text"
+            android:gravity="center"
+            android:hint="@string/enter_your_feedback"
+            android:paddingStart="10dp"
+            android:textAlignment="textStart"
+            android:textColorHint="@color/transparentBlack"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/sendCommentButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/sendCommentButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -101,16 +107,34 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/feedbackRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/feedbackRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentField"
+            tools:listitem="@layout/feedback_card" />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/ratingStars"
+
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:isIndicator="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorStars"
+        android:numStars="5"
+        android:progressBackgroundTint="@color/transparentBlack"
+        android:stepSize="0.5"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/feedback_card"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/restAddressTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

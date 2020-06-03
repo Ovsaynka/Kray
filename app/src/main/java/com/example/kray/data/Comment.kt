@@ -11,5 +11,9 @@ data class Comment(
     val comment: String?,
 
     @SerializedName("stars")
-    val stars: Int?
+    val stars: Int?,
+
+    @SerializedName("name")
+    val name: String?
+
 ): Serializable

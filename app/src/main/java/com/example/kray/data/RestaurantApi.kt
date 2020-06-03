@@ -1,10 +1,8 @@
 package com.example.kray.data
 
 import io.reactivex.Single
-import okhttp3.Call
 import okhttp3.ResponseBody
 import retrofit2.http.*
-
 
 const val PARAM_ID_MENU = "id"
 
@@ -22,7 +20,20 @@ interface RestaurantApi {
         @Body info: SignUpBody
     ): retrofit2.Call<ResponseBody>
 
+    @POST("/commentRestaurant")
+    fun getCommentRestaurant()
+
+
     @Headers("Content-Type:application/json")
-    @POST("/restaurant/addCommentRestaurant")
-    fun sendFeedback(@Body request: SendComments?): retrofit2.Call<ResponseBody>
+    @POST("/commentRestaurant/addCommentRestaurant")
+    fun sendComment(
+        @Body comment: CommentToSend,
+        @Query("idRestaurant") idRestaurant: Int,
+        @Query("idUser") idUser: Int,
+        @Header("Authorization") token: String
+    ): retrofit2.Call<ResponseBody>
+
+    @Headers("Content-Type:application/json")
+    @GET("/commentRestaurant")
+    fun getsComments(@Query("id") id: Int?): retrofit2.Callback<Array<Comment>>
 }

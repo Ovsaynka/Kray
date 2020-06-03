@@ -1,5 +1,6 @@
 package com.example.kray.main
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -49,6 +50,7 @@ class MainPageFragment : MvpAppCompatFragment(),
         return inflater.inflate(R.layout.main_page_fragment, container, false)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
@@ -95,12 +97,15 @@ class MainPageFragment : MvpAppCompatFragment(),
         } else
         {
             userNameTextView.text = ""
+            logout.setText("Sign in")
         }
 
         logout.setOnClickListener {
             if(session.isLoggedIn()) {
                 session.LogoutUser()
                 findNavController().navigate(R.id.action_mainPageFragment_to_startPageFragment)
+            } else {
+                findNavController().navigate(R.id.action_mainPageFragment_to_loginFragment)
             }
         }
     }

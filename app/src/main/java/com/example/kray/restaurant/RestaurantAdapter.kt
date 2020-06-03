@@ -19,10 +19,14 @@ class RestaurantAdapter(private val mCommentsList: Array<Comment?>) : RecyclerVi
 
         return ViewHolder(view)
     }
-    
+
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(mCommentsList[position]!!)
+    }
+
+    fun addItem(comment: Comment) {
+        mCommentsList.plus(comment)
     }
 
     override fun getItemCount(): Int = mCommentsList.size
@@ -32,6 +36,7 @@ class RestaurantAdapter(private val mCommentsList: Array<Comment?>) : RecyclerVi
 
             itemView.feedbackRatingBar.rating = comment.stars!!.toFloat()
             itemView.feedbackTextView.text = comment.comment.toString()
+            itemView.userNameTextView.text = comment.name.toString()
         }
     }
 }
