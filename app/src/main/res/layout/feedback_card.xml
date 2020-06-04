@@ -27,7 +27,7 @@
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/colorPrimary"
         android:numStars="5"
-        android:secondaryProgressTint="@color/colorStars"
+        android:progressTint="@color/colorStars"
         android:stepSize="0.5"
         app:layout_constraintBottom_toTopOf="@+id/feedbackTextView"
         app:layout_constraintEnd_toEndOf="@+id/feedbackTextView"

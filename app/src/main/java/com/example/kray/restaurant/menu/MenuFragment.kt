@@ -11,7 +11,7 @@ import com.example.kray.R
 import com.example.kray.data.Menu
 import com.example.kray.data.Restaurant
 import com.example.kray.restaurant.RESTAURANT_KEY
-import com.example.kray.restaurant.menu.dishes.DishesFragment
+import com.example.kray.restaurant.RestaurantRouter
 import kotlinx.android.synthetic.main.menu_fragment.*
 
 
@@ -55,20 +55,8 @@ class MenuFragment : MvpAppCompatFragment() {
 
     private val listener = object : MenuAdapter.Listener {
         override fun onItemClick(menu: Menu) {
-            val fragment = DishesFragment.newInstance(menu)
-            if (!isAdded) return
-            fragment.childFragmentManager.beginTransaction()
-                .replace(R.id.dishFragment, fragment)
-                .addToBackStack(null)
-                .commit()
-           /* val args = Bundle()
-            args.putSerializable("id", menu.id)
-            val fragment = DishesFragment()
-            fragment.arguments = args
-            childFragmentManager.beginTransaction()
-            .replace(R.id.dishFragment, fragment)
-            .addToBackStack(null)
-            .commit()*/
+            val router = activity as? RestaurantRouter
+            router?.navigateToDishes(menu)
         }
 
     }

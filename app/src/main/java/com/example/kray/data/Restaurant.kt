@@ -19,6 +19,9 @@ data class Restaurant(
     @SerializedName("phone")
     val phone:String?,
 
+    @SerializedName("type")
+    val cuisines: String?,
+
     @SerializedName("stars")
     val stars: Int?,
 

@@ -62,20 +62,44 @@
         android:text="@string/your_feedback"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/restAddressTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/cuisinesTextView" />
 
-    <TextView
-        android:id="@+id/restAddressTextView"
-        style="@style/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:textColor="#ABAAAA"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
-        tools:text="Address" />
+        <TextView
+            android:id="@+id/restAddressTextView"
+            style="@style/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#ABAAAA"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+            tools:text="Address" />
+
+        <TextView
+            android:id="@+id/cuisinesTitleTextView"
+            style="@style/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/cuisines"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/restAddressTextView" />
+
+        <TextView
+            android:id="@+id/cuisinesTextView"
+            style="@style/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cuisinesTitleTextView"
+            tools:text="@string/cuisines" />
 
         <EditText
             android:id="@+id/commentField"
@@ -126,13 +150,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:backgroundTint="@color/colorStars"
         android:numStars="5"
+        android:progressTint="@color/colorStars"
         android:progressBackgroundTint="@color/transparentBlack"
         android:stepSize="0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/restAddressTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/cuisinesTextView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

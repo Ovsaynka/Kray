@@ -6,7 +6,6 @@
     <string name="user_name">User name</string>
     <string name="log_out"><u>Log out</u></string>
     <string name="search">Search</string>
-    <string name="cuisines">Cuisines</string>
     <string name="sign_in">Sign in</string>
     <string name="max_average_check">Max average check</string>
     <string name="login">Login</string>
@@ -23,4 +22,5 @@
     <string name="Telephone">Telephone </string>
     <string name="logout">Logout</string>
     <string name="send">Send</string>
+    <string name="cuisines">Cuisines</string>
 </resources>

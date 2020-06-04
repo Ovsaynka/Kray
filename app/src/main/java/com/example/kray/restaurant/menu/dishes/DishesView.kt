@@ -4,5 +4,5 @@ import com.arellomobile.mvp.MvpView
 import com.example.kray.data.Dishes
 
 interface DishesView: MvpView {
-    fun loadData(dish: Dishes)
+   // fun loadData(dish: Dishes)
 }

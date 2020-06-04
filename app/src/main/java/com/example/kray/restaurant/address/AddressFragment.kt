@@ -17,17 +17,17 @@ import kotlinx.android.synthetic.main.address_fragment.*
 
 const val RESTAURANT_KEY = "restaurant"
 
-class AddressFragment: Fragment(), RestaurantView, OnMapReadyCallback {
+class AddressFragment : Fragment(), RestaurantView, OnMapReadyCallback {
 
-    var mMapView: MapView? = null
-    var mView: View? = null
+    private var mMapView: MapView? = null
+    private var mView: View? = null
 
-    var latitude: Double? = null
-    var longtitude: Double? = null
+    private var latitude: Double? = null
+    private var longtitude: Double? = null
 
-    var name: String? = null
+    private var name: String? = null
 
-    companion object{
+    companion object {
         fun newInstance(restaurant: Restaurant): Fragment {
             val args = Bundle()
             args.putSerializable(RESTAURANT_KEY, restaurant)
@@ -66,7 +66,6 @@ class AddressFragment: Fragment(), RestaurantView, OnMapReadyCallback {
     }
 
     override fun loadData(restaurant: Restaurant) {
-       // Picasso.get().load(restaurant.image).into(restImageView)
 
         textAddress.text = restaurant.address.toString()
         textTelephone.text = restaurant.phone.toString()
@@ -87,7 +86,9 @@ class AddressFragment: Fragment(), RestaurantView, OnMapReadyCallback {
             }
         )
         val cameraPosition =
-            CameraPosition.Builder().target(longtitude?.let { latitude?.let { it1 -> LatLng(it1, it) } }).zoom(16.0f).build()
+            CameraPosition.Builder()
+                .target(longtitude?.let { latitude?.let { it1 -> LatLng(it1, it) } }).zoom(16.0f)
+                .build()
         val cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition)
         googleMap.moveCamera(cameraUpdate)
 

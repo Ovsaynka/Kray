@@ -7,14 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kray.R
 import com.example.kray.SessionManager
 import com.example.kray.data.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.restaurant_fragment.*
-import kotlinx.android.synthetic.main.toolbar.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -38,8 +36,6 @@ class RestaurantFragment : Fragment(), RestaurantView {
             return fragment
         }
     }
-
-    //private val mAdapter: RestaurantAdapter = RestaurantAdapter()
 
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -97,12 +93,9 @@ class RestaurantFragment : Fragment(), RestaurantView {
 
         nameRestTextView.text = restaurant.name.toString()
         descriptionTextView.text = restaurant.description.toString()
+        cuisinesTextView.text = restaurant.cuisines.toString()
         restAddressTextView.text = restaurant.address.toString()
     }
-
-    /*override fun setCommentList(comment: List<Comment>) {
-       // mAdapter.addItems(comment)
-    }*/
 
     private fun sendComment(commentToSend: CommentToSend, idRestaurant: Int, idUser: Int, token: String){
         val retIn = provideRetrofit().create(RestaurantApi::class.java)

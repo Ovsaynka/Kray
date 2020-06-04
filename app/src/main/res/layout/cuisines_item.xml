@@ -2,20 +2,23 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:background="@color/colorWight"
+    android:backgroundTint="@color/colorWight"
     android:orientation="vertical"
-    app:cardCornerRadius="50dp"
     app:cardElevation="0dp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" >
 
-    <CheckBox
+    <TextView
+        android:id="@+id/cuisinesListTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/item_check"
-        />
+        android:textColor="@color/colorWight"
+        style="@style/textView"
+        android:gravity="center"
+        tools:text="Type"
+        android:background="@drawable/item_check"/>
     
 </androidx.cardview.widget.CardView>

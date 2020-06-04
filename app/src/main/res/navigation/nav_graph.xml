@@ -71,19 +71,5 @@
             android:id="@+id/action_loginFragment_to_mainPageFragment"
             app:destination="@id/mainPageFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/menuFragment"
-        android:name="com.example.kray.restaurant.menu.MenuFragment"
-        android:label="MenuFragment"
-        tools:layout="@layout/menu_fragment">
-        <action
-            android:id="@+id/action_menuFragment_to_dishesFragment"
-            app:destination="@id/dishesFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/dishesFragment"
-        android:name="com.example.kray.restaurant.menu.dishes.DishesFragment"
-        android:label="DishesFragment"
-        tools:layout="@layout/dish_fragment"/>
 
 </navigation>

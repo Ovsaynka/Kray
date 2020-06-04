@@ -14,6 +14,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
@@ -21,6 +22,7 @@ import com.example.kray.R
 import com.example.kray.SessionManager
 import com.example.kray.data.Restaurant
 import kotlinx.android.synthetic.main.main_page_fragment.*
+import kotlinx.android.synthetic.main.restaurant_fragment.*
 import kotlinx.android.synthetic.main.toolbar.*
 import org.koin.android.ext.android.get
 
@@ -42,6 +44,8 @@ class MainPageFragment : MvpAppCompatFragment(),
     private val mAdapter: RestaurantListAdapter =
         RestaurantListAdapter()
 
+    private val mCuisinesAdapter: CuisinesAdapter = CuisinesAdapter()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -54,6 +58,9 @@ class MainPageFragment : MvpAppCompatFragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
+
+            cuisinesRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        cuisinesRecyclerView.adapter = mCuisinesAdapter
 
         restaurantRecyclerView.layoutManager =
             GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)

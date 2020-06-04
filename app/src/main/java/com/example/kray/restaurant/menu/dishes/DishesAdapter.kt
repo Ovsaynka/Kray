@@ -12,36 +12,30 @@ import com.example.kray.data.Menu
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.dish_card.view.*
 
-class DishesAdapter:  RecyclerView.Adapter<DishesAdapter.TypeMenuViewHolder>() {
+class DishesAdapter:  RecyclerView.Adapter<DishViewHolder>() {
 
-    private val dishesList: MutableList<Dishes> = mutableListOf()
+    private val dishesList: MutableList<Dishes?> = mutableListOf()
 
-    override fun onBindViewHolder(holder: TypeMenuViewHolder, position: Int) {
-        holder.bind(dishesList[position])
+    override fun onBindViewHolder(holder: DishViewHolder, position: Int) {
+        holder.bind(dishesList[position]!!)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TypeMenuViewHolder {
-        return TypeMenuViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DishViewHolder {
+        return DishViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.menu_card,
+                R.layout.dish_card,
                 parent,
                 false
             )
         )
     }
 
-    override fun getItemCount(): Int {
-        return dishesList.size
+    fun setDishes(dishes: List<Dishes?>){
+        dishesList.addAll(dishes)
+        notifyDataSetChanged()
     }
 
-    class TypeMenuViewHolder internal constructor(itemView: View) :
-        RecyclerView.ViewHolder(itemView) {
-        fun bind(data: Dishes) {
-            Picasso.get().load(data.image).into(itemView.dishImageView)
-
-            itemView.titleTextView.text = data.name.toString()
-            itemView.priceTextView.text = data.price.toString()
-            itemView.descriptionTextView.text = data.description.toString()
-        }
+    override fun getItemCount(): Int {
+        return dishesList.size
     }
 }

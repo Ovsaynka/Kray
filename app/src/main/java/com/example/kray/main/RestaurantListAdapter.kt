@@ -1,19 +1,16 @@
 package com.example.kray.main
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kray.R
 import com.example.kray.data.Restaurant
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.rest_card.view.*
 import java.util.*
 import kotlin.collections.ArrayList
 
-class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHolder>(), Filterable {
+class RestaurantListAdapter : RecyclerView.Adapter<RestaurantViewHolder>(), Filterable {
 
     private var mRestaurantList: ArrayList<Restaurant> = arrayListOf()
     private var mFilterRestaurantList: ArrayList<Restaurant> = arrayListOf()
@@ -31,10 +28,17 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
         this.listener = listener
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
+        holder.bind(mFilterRestaurantList[position], listener)
+    }
+
+    override fun getItemCount(): Int = mFilterRestaurantList.size
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.rest_card, parent, false)
 
-        return ViewHolder(view)
+        return RestaurantViewHolder(view)
     }
 
 
@@ -80,35 +84,14 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantListAdapter.ViewHol
         }
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(mFilterRestaurantList[position], listener)
-    }
+    fun getFilterAvg(progress: Int) {
+        val resultList: ArrayList<Restaurant> = arrayListOf()
+        for (rest in mRestaurantList) {
+            if (rest.avgCheck!! >= progress)
+                resultList.add(rest)
 
-    override fun getItemCount(): Int = mFilterRestaurantList.size
-
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-        fun bind(restaurant: Restaurant, listener: Listener?) {
-            Picasso.get().load(restaurant.image).into(itemView.restaurantImageView)
-
-            itemView.nameRestTextView.text = restaurant.name
-            itemView.addressTextView.text = restaurant.address
-            itemView.rate.text = restaurant.stars.toString()
-            itemView.setOnClickListener {
-                listener?.onItemClick(restaurant)
-            }
-        }
-    }
-
-
-    fun getFilterAvg(progress: Int){
-                    val resultList: ArrayList<Restaurant> = arrayListOf()
-                    for (rest in mRestaurantList) {
-                        if (rest.avgCheck!! >= progress)
-                            resultList.add(rest)
-
-                mFilterRestaurantList = resultList as? ArrayList<Restaurant> ?: ArrayList()
-                notifyDataSetChanged()
+            mFilterRestaurantList = resultList as? ArrayList<Restaurant> ?: ArrayList()
+            notifyDataSetChanged()
         }
     }
 }
