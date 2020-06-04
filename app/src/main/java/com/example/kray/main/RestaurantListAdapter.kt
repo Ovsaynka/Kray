@@ -87,7 +87,7 @@ class RestaurantListAdapter : RecyclerView.Adapter<RestaurantViewHolder>(), Filt
     fun getFilterAvg(progress: Int) {
         val resultList: ArrayList<Restaurant> = arrayListOf()
         for (rest in mRestaurantList) {
-            if (rest.avgCheck!! >= progress)
+            if (rest.avgCheck!! <= progress)
                 resultList.add(rest)
 
             mFilterRestaurantList = resultList as? ArrayList<Restaurant> ?: ArrayList()

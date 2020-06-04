@@ -11,14 +11,15 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" >
 
-    <TextView
-        android:id="@+id/cuisinesListTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorWight"
-        style="@style/textView"
-        android:gravity="center"
-        tools:text="Type"
-        android:background="@drawable/item_check"/>
+        <TextView
+            android:id="@+id/cuisinesListTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWight"
+            android:background="@drawable/item_check"
+            style="@style/textView"
+            tools:text="Type"
+            android:gravity="center"
+            />
     
 </androidx.cardview.widget.CardView>

@@ -65,6 +65,8 @@ class RestaurantFragment : Fragment(), RestaurantView {
                         val id: Int = (user[SessionManager.KEY_USER_ID] ?: error("")).toInt()
 
                         sendComment(commentBody, restaurant.id!!, id, token)
+                        Toast.makeText(context, "your comment will appear later", Toast.LENGTH_SHORT)
+                            .show()
                     }
                 }
             } else {
@@ -72,10 +74,6 @@ class RestaurantFragment : Fragment(), RestaurantView {
                 commentField.isEnabled = false
                 ratingStars.isEnabled = false
             }
-
-    }
-
-    fun addComment(comment: Comment) {
 
     }
 
